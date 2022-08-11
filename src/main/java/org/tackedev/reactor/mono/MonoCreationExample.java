@@ -7,7 +7,7 @@ import reactor.core.scheduler.Schedulers;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 
-public class MonoExample {
+public class MonoCreationExample {
 
     public static void main(String[] args) {
 
@@ -16,11 +16,11 @@ public class MonoExample {
         Mono.fromSupplier(Common::getName)
                 .subscribe(s -> System.out.println("Received: " + s));
 
-        Mono.fromSupplier(MonoExample::getNameInLongTime)
+        Mono.fromSupplier(MonoCreationExample::getNameInLongTime)
                 .subscribeOn(Schedulers.boundedElastic())
                 .subscribe(s -> System.out.println("Received: " + s));
 
-        String name = Mono.fromSupplier(MonoExample::getNameInLongTime)
+        String name = Mono.fromSupplier(MonoCreationExample::getNameInLongTime)
                 .subscribeOn(Schedulers.boundedElastic())
                 .block();
         System.out.println("Received: " + name);
@@ -38,7 +38,7 @@ public class MonoExample {
     }
 
     public static Callable<String> getNameCallable() {
-        return MonoExample::getNameInLongTime;
+        return MonoCreationExample::getNameInLongTime;
     }
 
     public static CompletableFuture<String> getNameFuture() {
