@@ -12,6 +12,10 @@ public final class Common {
         return FAKER.name().fullName();
     }
 
+    public static String getCountry() {
+        return FAKER.country().name();
+    }
+
     public static void sleepInSeconds(long seconds) {
         try {
             Thread.sleep(seconds * 1000);
