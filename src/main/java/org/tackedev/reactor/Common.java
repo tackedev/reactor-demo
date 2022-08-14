@@ -8,6 +8,10 @@ import lombok.NoArgsConstructor;
 public final class Common {
     private static final Faker FAKER = Faker.instance();
 
+    public static int getRandomInt(int min, int max) {
+        return FAKER.number().numberBetween(min, max);
+    }
+
     public static String getName() {
         return FAKER.name().fullName();
     }
