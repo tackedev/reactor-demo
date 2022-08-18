@@ -28,4 +28,13 @@ public final class Common {
             throw new RuntimeException(e);
         }
     }
+
+    public static void sleepInMillis(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException(e);
+        }
+    }
 }
