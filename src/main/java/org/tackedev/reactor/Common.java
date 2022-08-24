@@ -8,6 +8,14 @@ import lombok.NoArgsConstructor;
 public final class Common {
     private static final Faker FAKER = Faker.instance();
 
+    public static String getCreditCardNumber() {
+        return FAKER.business().creditCardNumber();
+    }
+
+    public static String getIdNumber() {
+        return FAKER.idNumber().valid();
+    }
+
     public static int getRandomInt(int min, int max) {
         return FAKER.number().numberBetween(min, max);
     }
