@@ -1,4 +1,4 @@
-package org.tackedev.reactor.buffer;
+package org.tackedev.reactor.batch;
 
 import org.tackedev.reactor.Common;
 import org.tackedev.reactor.subscriber.DefaultSubscriber;
